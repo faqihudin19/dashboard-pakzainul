@@ -1,26 +1,439 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  background: #f5f3ff;
+  color: #20243a;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 180px;
+  padding: 40px 70px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  background-image: linear-gradient(
+    135deg,
+    #6864e8,
+    #8b82ed
+  );
+}
+
+.header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  display: flex;
+  min-height: 550px;
+
+  background: white;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 230px;
+
+  padding: 30px 20px;
+
+  border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  color: #20243a;
+
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #eeeaff;
+
+  color: #5c55d8;
+}
+
+.sidebar a.active {
+  background: #eeeaff;
+
+  color: #5c55d8;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  flex: 1;
+
+  padding: 40px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome {
+  min-height: 430px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+  font-size: 80px;
+
+  margin-bottom: 20px;
+}
+
+.welcome h2 {
+  font-size: 42px;
+
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  font-size: 24px;
+}
+
+.garis {
+  width: 100px;
+
+  height: 5px;
+
+  margin-top: 25px;
+
+  border-radius: 10px;
+
+  background: #8b82ed;
+}
+
+
+/* =========================
+   CERITA
+========================= */
+
+.cerita {
+  width: 100%;
+}
+
+.cerita h2 {
+  font-size: 36px;
+}
+
+.subjudul {
+  margin-top: 10px;
+
+  margin-bottom: 30px;
+
+  color: #777;
+}
+
+
+/* =========================
+   CARD CERITA
+========================= */
+
+.card-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.card {
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-image {
+  height: 160px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 70px;
+
+  background: #eeeaff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 8px;
+}
+
+.card-body small {
+  color: #777;
+}
+
+.card-body p {
+  margin-top: 15px;
+
+  margin-bottom: 15px;
+
+  line-height: 1.5;
+
+  color: #555;
+}
+
+
+/* =========================
+   TOMBOL BACA
+========================= */
+
+.baca {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  background: #6864e8;
+
+  color: white;
+
+  font-size: 14px;
+}
+
+.baca:hover {
+  background: #504bd0;
+}
+
+
+/* =========================
+   DETAIL CERITA
+========================= */
+
+.detail {
+  min-height: 550px;
+
+  padding: 40px;
+
+  background: white;
+}
+
+.kembali {
+  display: inline-block;
+
+  margin-bottom: 25px;
+
+  color: #6864e8;
+}
+
+.detail-card {
+  max-width: 900px;
+
+  margin: auto;
+
+  border: 1px solid #ddd;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.detail-image {
+  height: 250px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 100px;
+
+  background: #eeeaff;
+}
+
+.detail-content {
+  padding: 30px;
+}
+
+.detail-content h2 {
+  font-size: 32px;
+
+  margin-bottom: 10px;
+}
+
+.detail-content small {
+  color: #777;
+}
+
+.detail-content p {
+  margin-top: 25px;
+
+  line-height: 1.8;
+
+  color: #444;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.detail-error {
+  min-height: 550px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.detail-error a {
+  color: #6864e8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 30px;
+
+  text-align: center;
+
+  background: #f8f7ff;
+
+  border-top: 1px solid #ddd;
+}
+
+.footer p {
+  margin-bottom: 15px;
+}
+
+.social span {
+  margin: 0 8px;
+
+  color: #6864e8;
+
+  font-size: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+  .header {
+    height: 150px;
+
+    padding: 30px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+
+    border-right: none;
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .welcome h2 {
+    font-size: 30px;
+  }
+
 }
