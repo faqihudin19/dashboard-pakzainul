@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
-  title: "My Website",
-  description: "Cerita, Kenangan, dan Inspirasi",
+  title: "Website Pengalaman",
+  description: "Kumpulan pengalaman pribadi",
 };
 
 export default function RootLayout({
@@ -14,11 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body>
-        <div className="opacity-80 w-screen h-screen">
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

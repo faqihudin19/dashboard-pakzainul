@@ -1,10 +1,10 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="website">
-
       <Header />
 
       <div className="dashboard">
@@ -14,13 +14,19 @@ export default function Home() {
 
           <h3>Menu</h3>
 
-          <a href="/" className="active">
+          <Link
+            href="/"
+            className="menu active"
+          >
             Home
-          </a>
+          </Link>
 
-          <a href="/cerita">
-            Cerita Kami
-          </a>
+          <Link
+            href="/pengalaman"
+            className="menu"
+          >
+            Pengalaman
+          </Link>
 
         </aside>
 
@@ -31,16 +37,35 @@ export default function Home() {
           <div className="welcome">
 
             <div className="icon">
-              
+              <img src="/images/boysdontsryPP-dashboard-removebg-preview.png" 
+              alt="Icon" 
+              className="welcome-icon"
+              />
+
             </div>
 
-            <h2>Selamat Datang</h2>
+            <h2>
+              Selamat Datang
+            </h2>
 
             <p>
-              di website pribadiku
+              di website pengalaman pribadi saya
             </p>
 
             <div className="garis"></div>
+
+            <p className="welcome-text">
+              Website ini berisi kumpulan pengalaman
+              yang pernah saya alami selama berada
+              di sekolah.
+            </p>
+
+            <Link
+              href="/pengalaman"
+              className="button"
+            >
+              Lihat Pengalaman
+            </Link>
 
           </div>
 
@@ -48,9 +73,7 @@ export default function Home() {
 
       </div>
 
-
       <Footer />
-
     </main>
   );
 }

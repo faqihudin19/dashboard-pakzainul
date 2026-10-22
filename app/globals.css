@@ -1,17 +1,32 @@
+/* =========================
+   RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f3ff;
-  color: #20243a;
+html {
+  scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f3ff;
+  color: #29243a;
+}
+
+
+/* =========================
+   WEBSITE
+========================= */
+
+.website {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -20,28 +35,107 @@ a {
 ========================= */
 
 .header {
-  height: 180px;
-  padding: 40px 70px;
+  position: relative;
+
+  min-height: 280px;
+
+  background-image: url("/images/bg-jojo.jpeg");
+
+  background-size: cover;
+
+  background-position: center;
 
   display: flex;
+
   align-items: center;
 
-  color: white;
+  justify-content: center;
 
-  background-image: linear-gradient(
-    135deg,
-    #6864e8,
-    #8b82ed
-  );
+  overflow: hidden;
+
+  color: white;
 }
 
-.header h1 {
+
+/* =========================
+   OVERLAY UNGU
+========================= */
+
+.header-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+    Warna ungu dengan opacity
+    sehingga gambar masih terlihat
+  */
+
+  background-color: rgba(91, 45, 145, 0.70);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   HEADER CONTENT
+========================= */
+
+.header-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.header-content h1 {
   font-size: 42px;
+
   margin-bottom: 10px;
 }
 
-.header p {
+.header-content p {
   font-size: 18px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  margin-top: 25px;
+}
+
+.navbar a {
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  padding: 8px 5px;
+
+  border-bottom: 2px solid transparent;
+
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid white;
 }
 
 
@@ -51,9 +145,10 @@ a {
 
 .dashboard {
   display: flex;
-  min-height: 550px;
 
-  background: white;
+  flex: 1;
+
+  width: 100%;
 }
 
 
@@ -64,41 +159,52 @@ a {
 .sidebar {
   width: 230px;
 
+  background: white;
+
   padding: 30px 20px;
 
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #e5def2;
 }
 
 .sidebar h3 {
+  color: #5b2d91;
+
+  font-size: 20px;
+
   margin-bottom: 20px;
 }
 
-.sidebar a {
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
   display: block;
 
-  padding: 15px;
+  padding: 13px 15px;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
-  border-radius: 10px;
+  border-radius: 8px;
 
-  color: #20243a;
+  text-decoration: none;
 
-  transition: 0.3s;
+  color: #333;
+
+  transition: 0.2s;
 }
 
-.sidebar a:hover {
-  background: #eeeaff;
+.menu:hover {
+  background: #eee6ff;
 
-  color: #5c55d8;
+  color: #5b2d91;
 }
 
-.sidebar a.active {
-  background: #eeeaff;
+.menu.active {
+  background: #7c3fc6;
 
-  color: #5c55d8;
-
-  font-weight: bold;
+  color: white;
 }
 
 
@@ -118,78 +224,136 @@ a {
 ========================= */
 
 .welcome {
-  min-height: 430px;
+  max-width: 800px;
 
-  border: 1px solid #ddd;
+  margin: 30px auto;
 
-  border-radius: 16px;
+  padding: 60px 40px;
 
-  display: flex;
+  background: white;
 
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
+  border-radius: 15px;
 
   text-align: center;
 
   box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.05);
+    0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .icon {
-  font-size: 80px;
+  width: 75px;
 
-  margin-bottom: 20px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #7c3fc6;
+
+  font-size: 32px;
 }
 
 .welcome h2 {
-  font-size: 42px;
+  font-size: 32px;
 
   margin-bottom: 10px;
 }
 
-.welcome p {
-  font-size: 24px;
+.welcome > p {
+  color: #666;
+
+  font-size: 18px;
 }
 
-.garis {
-  width: 100px;
+.welcome-text {
+  max-width: 550px;
 
-  height: 5px;
+  margin: 0 auto 25px;
 
-  margin-top: 25px;
+  line-height: 1.7;
 
-  border-radius: 10px;
-
-  background: #8b82ed;
+  font-size: 15px !important;
 }
 
 
 /* =========================
-   CERITA
+   GARIS
 ========================= */
 
-.cerita {
-  width: 100%;
+.garis {
+  width: 65px;
+
+  height: 5px;
+
+  margin: 25px auto;
+
+  background: #7c3fc6;
+
+  border-radius: 10px;
 }
 
-.cerita h2 {
-  font-size: 36px;
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  background: #7c3fc6;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+
+  transition: 0.2s;
 }
 
-.subjudul {
-  margin-top: 10px;
+.button:hover {
+  background: #5b2d91;
+}
 
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.pengalaman-page {
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+.page-title {
   margin-bottom: 30px;
+}
 
+.page-title h2 {
+  font-size: 32px;
+
+  margin-bottom: 8px;
+}
+
+.page-title p {
   color: #777;
 }
 
 
 /* =========================
-   CARD CERITA
+   CARD
 ========================= */
 
 .card-container {
@@ -198,133 +362,153 @@ a {
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
   background: white;
 
-  border: 1px solid #ddd;
-
-  border-radius: 15px;
+  border-radius: 12px;
 
   overflow: hidden;
 
   box-shadow:
-    0 5px 15px rgba(0, 0, 0, 0.05);
+    0 4px 15px rgba(0, 0, 0, 0.06);
+
+  transition: 0.2s;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
 
 .card-image {
-  height: 160px;
+  width: 100%;
 
-  display: flex;
+  height: 190px;
 
-  justify-content: center;
+  object-fit: cover;
 
-  align-items: center;
-
-  font-size: 70px;
-
-  background: #eeeaff;
+  display: block;
 }
+
+
+/* =========================
+   CARD BODY
+========================= */
 
 .card-body {
   padding: 20px;
 }
 
 .card-body h3 {
+  font-size: 19px;
+
+  line-height: 1.4;
+
   margin-bottom: 8px;
 }
 
-.card-body small {
-  color: #777;
+.tanggal {
+  color: #7c3fc6;
+
+  font-size: 13px;
+
+  margin-bottom: 12px;
 }
 
-.card-body p {
-  margin-top: 15px;
-
-  margin-bottom: 15px;
-
-  line-height: 1.5;
-
-  color: #555;
-}
-
-
-/* =========================
-   TOMBOL BACA
-========================= */
-
-.baca {
-  display: inline-block;
-
-  padding: 10px 20px;
-
-  border-radius: 8px;
-
-  background: #6864e8;
-
-  color: white;
+.cuplikan {
+  color: #666;
 
   font-size: 14px;
+
+  line-height: 1.6;
 }
 
-.baca:hover {
-  background: #504bd0;
+.baca {
+  margin-top: 10px;
 }
 
 
 /* =========================
-   DETAIL CERITA
+   DETAIL
 ========================= */
 
-.detail {
-  min-height: 550px;
+.detail-page {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: auto;
 
   padding: 40px;
-
-  background: white;
 }
 
 .kembali {
   display: inline-block;
 
-  margin-bottom: 25px;
+  color: #7c3fc6;
 
-  color: #6864e8;
+  text-decoration: none;
+
+  font-weight: bold;
+
+  margin-bottom: 20px;
 }
 
+.kembali:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   DETAIL CARD
+========================= */
+
 .detail-card {
-  max-width: 900px;
-
-  margin: auto;
-
-  border: 1px solid #ddd;
+  background: white;
 
   border-radius: 15px;
 
   overflow: hidden;
 
   box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.05);
+    0 5px 20px rgba(0, 0, 0, 0.07);
 }
+
+
+/* =========================
+   DETAIL IMAGE
+========================= */
 
 .detail-image {
-  height: 250px;
+  width: 100%;
 
-  display: flex;
+  height: 400px;
 
-  justify-content: center;
+  object-fit: cover;
 
-  align-items: center;
-
-  font-size: 100px;
-
-  background: #eeeaff;
+  display: block;
+  
 }
 
+
+/* =========================
+   DETAIL CONTENT
+========================= */
+
 .detail-content {
-  padding: 30px;
+  padding: 35px;
 }
 
 .detail-content h2 {
@@ -333,16 +517,22 @@ a {
   margin-bottom: 10px;
 }
 
-.detail-content small {
-  color: #777;
+.detail-content p:last-child {
+  color: #555;
+
+  font-size: 16px;
+
+  line-height: 1.9;
 }
 
-.detail-content p {
-  margin-top: 25px;
+.detail-line {
+  width: 60px;
 
-  line-height: 1.8;
+  height: 4px;
 
-  color: #444;
+  background: #7c3fc6;
+
+  margin: 20px 0;
 }
 
 
@@ -350,22 +540,22 @@ a {
    ERROR
 ========================= */
 
-.detail-error {
-  min-height: 550px;
+.error-page {
+  flex: 1;
 
-  display: flex;
+  text-align: center;
 
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 20px;
+  padding: 100px 30px;
 }
 
-.detail-error a {
-  color: #6864e8;
+.error-page h2 {
+  margin-bottom: 10px;
+}
+
+.error-page p {
+  color: #666;
+
+  margin-bottom: 25px;
 }
 
 
@@ -374,42 +564,52 @@ a {
 ========================= */
 
 .footer {
-  padding: 30px;
+  background: #302044;
+
+  color: white;
 
   text-align: center;
 
-  background: #f8f7ff;
+  padding: 25px;
 
-  border-top: 1px solid #ddd;
+  font-size: 14px;
 }
 
-.footer p {
-  margin-bottom: 15px;
-}
-
-.social span {
-  margin: 0 8px;
-
-  color: #6864e8;
-
-  font-size: 20px;
+.footer p:first-child {
+  margin-bottom: 5px;
 }
 
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-  .header {
-    height: 150px;
-
-    padding: 30px;
+  .card-container {
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
-  .header h1 {
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .header {
+    min-height: 230px;
+  }
+
+  .header-content h1 {
     font-size: 32px;
+  }
+
+  .header-content p {
+    font-size: 15px;
   }
 
   .dashboard {
@@ -419,21 +619,59 @@ a {
   .sidebar {
     width: 100%;
 
+    padding: 15px;
+
     border-right: none;
 
-    border-bottom: 1px solid #ddd;
+    border-bottom:
+      1px solid #e5def2;
   }
 
-  .card-container {
-    grid-template-columns: 1fr;
+  .sidebar h3 {
+    display: none;
+  }
+
+  .menu {
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    margin-right: 5px;
   }
 
   .content {
     padding: 20px;
   }
 
-  .welcome h2 {
-    font-size: 30px;
+  .card-container {
+    grid-template-columns: 1fr;
   }
 
+  .welcome {
+    padding: 40px 20px;
+  }
+
+  .detail-page {
+    padding: 20px;
+  }
+
+  .detail-image {
+    height: 250px;
+  }
+
+  .detail-content {
+    padding: 25px 20px;
+  }
+
+  .detail-content h2 {
+    font-size: 25px;
+  }
+
+}
+
+
+.welcome-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
